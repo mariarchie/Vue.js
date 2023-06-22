@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Вы разрабатываете приложение для отображения и сортировки списка товаров. У вас есть массив объектов products, где каждый объект представляет товар с его названием и ценой. Вам необходимо отобразить список товаров и предоставить пользователю возможность сортировать товары по цене (по возрастанию и по убыванию). -->
+    <div id="app">
+        <button @click="sortAscending">Sort ↑</button>
+        <button @click="sortDescending">Sort ↓</button>
+        <button @click="resetProducts">Reset</button>
+        <ul>
+            <li v-for="product in sortedProducts" :key="product.name">
+                {{ product.name }} : {{ product.price }}
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+          el: '#app',
+          data: {
+            originalProducts: [
+              { name: "Товар 1", price: 950 },
+              { name: "Товар 2", price: 62 },
+              { name: "Товар 3", price: 0 },
+              { name: "Товар 4", price: 62 },
+              { name: "Товар 5", price: 1 },
+              { name: "Товар 6", price: 9 },
+            ],
+            products: [],
+            ascending: true,
+          },
+          mounted() {
+            this.resetProducts();
+          },
+          computed: {
+            sortedProducts() {
+              return this.products;
+            },
+          },
+          methods: {
+            sortAscending() {
+              this.ascending = true;
+              this.sortProducts();
+            },
+            sortDescending() {
+              this.ascending = false;
+              this.sortProducts();
+            },
+            resetProducts() {
+              this.ascending = true;
+              this.products = [...this.originalProducts];
+            },
+            sortProducts() {
+              this.products.sort((a, b) => {
+                if (this.ascending) {
+                  return a.price - b.price;
+                } else {
+                  return b.price - a.price;
+                }
+              });
+            },
+          },
+        });
+      </script>
+</body>
+
+</html>
