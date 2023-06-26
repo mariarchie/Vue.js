@@ -69,7 +69,8 @@
             <h2 class="blogPage__center__articles__heading">Articles & News</h2>
             <div class="blogPage__news-container center" id="app">
                 <div class="blogPage__news-container center" id="app">
-                    <div class="blogPage__news" v-for="(article, index) in articles" :key="article.id" :class="{'blogPage__news2': index === 1}">
+                    <div class="blogPage__news" v-for="(article, index) in articles" :key="article.id"
+                        :class="{'blogPage__news2': index === 1}">
                         <img class="blogPage__news__img" :src="article.image" alt="news image">
                         <div class="blogPage__news__content">
                             <div class="blogPage__news__overlay">
@@ -200,3 +201,4 @@
         </div>
     </footer>
     </div>
+</body>

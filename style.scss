@@ -387,7 +387,7 @@ p {
         &__content {
             position: absolute;
             bottom: 0;
-            left: 50%; 
+            left: 50%;
             transform: translateX(-50%);
             width: 500px;
             height: 178px;
@@ -646,6 +646,183 @@ p {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+.blogDetailsPage {
+
+    margin-bottom: 150px;
+
+    &__banner {
+        margin-bottom: 150px;
+
+        &__img {
+            width: 100%;
+            height: auto;
+        }
+
+    }
+
+    &__center {
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+        align-items: flex-start;
+
+
+        &__title {
+            font-family: 'DM Serif Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 31px;
+            margin-bottom: 10px;
+        }
+
+        &__artticleTitle {
+            font-family: 'DM Serif Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 50px;
+            line-height: 62.5px;
+            margin-bottom: 20px;
+        }
+
+        &__underImg {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 400px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 45px;
+            margin-bottom: 55px;
+        }
+
+        &__artticleDate {
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        &__text {
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 33px;
+            margin-bottom: 40px;
+        }
+
+        &__slogan {
+            padding-top: 60px;
+            padding-bottom: 60px;
+
+            &-container {
+                display: flex;
+                justify-content: center;
+                background-color: $advantagesBack;
+                margin-bottom: 40px;
+                border-radius: 50px;
+            }
+        }
+
+        &__list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        &__list li {
+            margin-bottom: 10px;
+            position: relative;
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 33px;
+            width: 713px;
+            color: $colorText;
+            padding-left: 20px;
+        }
+
+        &__list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 8.5px;
+            height: 25px;
+            text-align: center;
+            color: #CDA274;
+            font-weight: bold;
+            font-family: 'DM Serif Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 25px;
+        }
+
+        &__list li:nth-child(1)::before {
+            content: '1';
+        }
+
+        &__list li:nth-child(2)::before {
+            content: '2';
+        }
+
+        &__list li:nth-child(3)::before {
+            content: '3';
+        }
+
+        &__img2 {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__tag-container {
+        align-items: center;
+        margin-bottom: 10px;
+        width: 400px;
+        height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__tag {
+        display: inline-block;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        margin-right: 24px;
+        background-color: $advantagesBack;
+        color: black;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 18px;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+
+    }
+
+    &__selected-tag {
+        background-color: black;
+        color: white;
+    }
+
+    &__article {
+        margin-top: 20px;
+    }
+
+    &__selected-article {
+        border-radius: 5px;
+        margin-bottom: 30px;
+    }
+}
+
 
 .footer {
     display: flex;
